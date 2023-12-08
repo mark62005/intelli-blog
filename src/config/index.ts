@@ -5,13 +5,13 @@ export const NAV_LINKS = [
 		variant: "ghost" as const,
 	},
 	{
-		label: "Trending",
-		href: "/trending",
+		label: "About",
+		href: "/about",
 		variant: "ghost" as const,
 	},
 	{
-		label: "About",
-		href: "/about",
+		label: "Trending",
+		href: "/trending",
 		variant: "ghost" as const,
 	},
 	{
@@ -69,4 +69,31 @@ export const SOCIAL_LINKS = [
 			alt: "Logo of Discord",
 		},
 	},
+];
+
+export const FOOTER_NAV_LINKS = [
+	[
+		{
+			label: "About",
+			href: "/about",
+		},
+		{
+			label: "Trending",
+			href: "/trending",
+		},
+		{
+			label: "Privacy Policy",
+			href: "/privacy-policy",
+		},
+	],
+	[
+		{
+			label: "Sign In",
+			href: "/sign-in",
+		},
+		{
+			label: "Become a Member",
+			href: "/sign-up",
+		},
+	],
 ];

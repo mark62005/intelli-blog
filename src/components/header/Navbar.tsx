@@ -3,13 +3,13 @@ import { buttonVariants } from "../ui/button";
 import { NAV_LINKS } from "@/config";
 import MaxWidthContainer from "../MaxWidthContainer";
 import MobileNavMenu from "./MobileNavMenu";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "../SocialLinks";
 
 const Navbar = () => {
 	return (
 		<header className="sticky z-50 top-0 inset-x-0 mb-5 grid grid-cols-1 bg-white">
 			<MaxWidthContainer className="relative">
-				<SocialLinks />
+				<SocialLinks className="border-b border-gray-300" />
 				<div className="flex justify-between items-center w-full py-2 border-b border-gray-300">
 					{/* LEFT SIDE */}
 					<Link
