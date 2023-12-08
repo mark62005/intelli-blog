@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
 			<body className={cn("relative antialiased", openSans.className)}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
