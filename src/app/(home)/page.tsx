@@ -2,6 +2,7 @@ import MaxWidthContainer from "@/components/MaxWidthContainer";
 import HeroSection from "./Hero";
 import TrendingSection from "./Trending";
 import TechSection from "./Tech";
+import TravelSection from "./Travel";
 
 export default function Home() {
 	return (
@@ -15,7 +16,9 @@ export default function Home() {
 				<div className="my-10 lg:flex lg:gap-10">
 					<div className="basis-3/4">
 						<TechSection />
-
+						<hr className="border" />
+						<TravelSection />
+						<hr className="border" />
 						<div className="hidden lg:block">{/* SUBSCRIBE CTA */}</div>
 					</div>
 

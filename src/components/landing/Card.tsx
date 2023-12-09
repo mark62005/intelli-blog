@@ -2,11 +2,12 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 type TechCardProps = {
+	section: "tech" | "travel";
 	variant?: "md" | "lg";
 	className?: string;
 };
 
-const TechCard = ({ variant = "md", className }: TechCardProps) => {
+const TechCard = ({ section, variant = "md", className }: TechCardProps) => {
 	return (
 		<Link
 			href="/"
@@ -15,7 +16,8 @@ const TechCard = ({ variant = "md", className }: TechCardProps) => {
 		>
 			<div
 				className={cn("relative w-full h-48 mb-3 bg-slate-600", {
-					"h-96": variant === "lg",
+					"h-96": section === "tech" && variant === "lg",
+					"h-80": section === "travel" && variant === "lg",
 				})}
 			>
 				Image

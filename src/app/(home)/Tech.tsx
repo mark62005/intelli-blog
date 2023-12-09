@@ -12,12 +12,22 @@ const Tech = () => {
 			{/* CONTENT */}
 			<div className="grid grid-cols-1 gap-8 my-4 lg:grid-cols-2 lg:grid-rows-3">
 				<Card
+					section="tech"
 					variant="lg"
 					className="lg:col-span-1 lg:row-span-3"
 				/>
-				<Card className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1" />
-				<Card className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1" />
-				<Card className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1" />
+				<Card
+					section="tech"
+					className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
+				/>
+				<Card
+					section="tech"
+					className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
+				/>
+				<Card
+					section="tech"
+					className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
+				/>
 			</div>
 		</section>
 	);
