@@ -16,24 +16,23 @@ const Travel = () => {
 				<div className="flex gap-8 my-4 lg:justify-between">
 					<Card
 						section="travel"
-						variant="lg"
+						variant="secondary"
 						className="basis-1/3"
 					/>
 					<Card
 						section="travel"
-						variant="lg"
+						variant="secondary"
 						className="basis-1/3"
 					/>
 					<Card
 						section="travel"
-						variant="lg"
+						variant="secondary"
 						className="basis-1/3"
 					/>
 				</div>
 
 				<Card
 					section="travel"
-					variant="md"
 					className="flex items-center lg:justify-between gap-4"
 				/>
 			</>
