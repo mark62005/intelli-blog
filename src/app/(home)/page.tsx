@@ -3,6 +3,7 @@ import HeroSection from "./Hero";
 import TrendingSection from "./Trending";
 import TechSection from "./Tech";
 import TravelSection from "./Travel";
+import OtherSection from "./Other";
 
 export default function Home() {
 	return (
@@ -19,6 +20,7 @@ export default function Home() {
 						<hr className="border" />
 						<TravelSection />
 						<hr className="border" />
+						<OtherSection />
 						<div className="hidden lg:block">{/* SUBSCRIBE CTA */}</div>
 					</div>
 
