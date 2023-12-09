@@ -1,5 +1,6 @@
 import MaxWidthContainer from "@/components/MaxWidthContainer";
 import HeroSection from "./Hero";
+import Trending from "./Trending";
 
 export default function Home() {
 	return (
@@ -7,6 +8,7 @@ export default function Home() {
 			<MaxWidthContainer>
 				<HeroSection />
 				<hr className="border" />
+				<Trending />
 			</MaxWidthContainer>
 		</main>
 	);
