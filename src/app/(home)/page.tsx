@@ -4,6 +4,7 @@ import TrendingSection from "./Trending";
 import TechSection from "./Tech";
 import TravelSection from "./Travel";
 import OtherSection from "./Other";
+import SubscribeCTA from "@/components/landing/SubscribeCTA";
 
 export default function Home() {
 	return (
@@ -21,7 +22,9 @@ export default function Home() {
 						<TravelSection />
 						<hr className="border" />
 						<OtherSection />
-						<div className="hidden lg:block">{/* SUBSCRIBE CTA */}</div>
+
+						{/* SUBSCRIBE CTA */}
+						<SubscribeCTA className="mt-16" />
 					</div>
 
 					<div className="basis-1/4">{/* SIDEBAR */}</div>
