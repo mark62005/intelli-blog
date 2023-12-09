@@ -40,6 +40,9 @@ module.exports = {
 				},
 				accent: {
 					DEFAULT: "hsl(var(--accent))",
+					orange: "hsl(var(--accent-orange))",
+					yellow: "hsl(var(--accent-yellow))",
+					green: "hsl(var(--accent-green))",
 					foreground: "hsl(var(--accent-foreground))",
 				},
 				popover: {
