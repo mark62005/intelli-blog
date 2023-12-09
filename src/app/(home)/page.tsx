@@ -5,6 +5,7 @@ import TechSection from "./Tech";
 import TravelSection from "./Travel";
 import OtherSection from "./Other";
 import SubscribeCTA from "@/components/landing/SubscribeCTA";
+import Sidbar from "./Sidbar";
 
 export default function Home() {
 	return (
@@ -23,11 +24,10 @@ export default function Home() {
 						<hr className="border" />
 						<OtherSection />
 
-						{/* SUBSCRIBE CTA */}
-						<SubscribeCTA className="mt-16" />
+						<SubscribeCTA className="mt-16 hidden lg:flex" />
 					</div>
 
-					<div className="basis-1/4">{/* SIDEBAR */}</div>
+					<Sidbar className="basis-1/4" />
 				</div>
 			</MaxWidthContainer>
 		</main>

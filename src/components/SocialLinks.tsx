@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 type SocialLinksProps = {
 	className?: string;
-	variant?: "header" | "footer";
+	variant?: "header" | "footer" | "sidebar";
 };
 
 const SocialLinks = ({ className, variant = "header" }: SocialLinksProps) => {
@@ -25,10 +25,10 @@ const SocialLinks = ({ className, variant = "header" }: SocialLinksProps) => {
 					<Image
 						src={link.image.src}
 						alt={link.image.alt}
-						width={20}
-						height={20}
+						width={variant === "sidebar" ? 25 : 20}
+						height={variant === "sidebar" ? 25 : 20}
 						className={`${
-							variant === "header"
+							variant != "footer"
 								? "brightness-0 opacity-75 hover:opacity-50"
 								: "brightness-95 hover:opacity-75"
 						}`}
