@@ -1,6 +1,7 @@
 import MaxWidthContainer from "@/components/MaxWidthContainer";
 import HeroSection from "./Hero";
-import Trending from "./Trending";
+import TrendingSection from "./Trending";
+import TechSection from "./Tech";
 
 export default function Home() {
 	return (
@@ -8,7 +9,18 @@ export default function Home() {
 			<MaxWidthContainer>
 				<HeroSection />
 				<hr className="border" />
-				<Trending />
+				<TrendingSection />
+				<hr className="border" />
+
+				<div className="my-10 lg:flex lg:gap-10">
+					<div className="basis-3/4">
+						<TechSection />
+
+						<div className="hidden lg:block">{/* SUBSCRIBE CTA */}</div>
+					</div>
+
+					<div className="basis-1/4">{/* SIDEBAR */}</div>
+				</div>
 			</MaxWidthContainer>
 		</main>
 	);
