@@ -19,7 +19,7 @@ const TrendingCard = ({ className }: TrendingCardProps) => {
 
 			{/* CONTENT */}
 			<div className="absolute z-1 bottom-0 left-0 p-4">
-				<h4 className="inline-block px-5 py-1 font-semibold bg-secondary text-gray-900">
+				<h4 className="inline-block px-5 py-1 font-semibold bg-accent-yellow">
 					Category
 				</h4>
 				<div className="text-gray-200 mt-2 line-clamp-1">

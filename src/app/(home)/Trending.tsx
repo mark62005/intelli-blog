@@ -4,7 +4,7 @@ const Trending = () => {
 	return (
 		<section className="py-10">
 			<div className="flex items-center gap-4">
-				<div className="bg-slate-700 text-gray-100 font-bold text-base py-2 px-8">
+				<div className="bg-accent-yellow font-bold text-base py-2 px-8">
 					TRENDING
 				</div>
 				<p className="text-sm">
