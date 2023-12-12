@@ -1,21 +1,30 @@
-import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { PostWithCategory } from "@/types/PostWithCategory";
 
 type TechCardProps = {
 	section: "tech" | "travel" | "other";
 	variant?: "primary" | "secondary";
+	post: PostWithCategory;
 	className?: string;
 };
 
 const TechCard = ({
 	section,
 	variant = "primary",
+	post,
 	className,
 }: TechCardProps) => {
+	const { id, title, snippet, image, author, createdAt } = post || {};
+	const formattedDate = new Date(createdAt).toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
+
 	return (
 		<Link
-			href="/"
-			// href={`${process.env.NEXT_PUBLIC_URL}/posts/${post?.id}`}
+			href={`/posts/${id}`}
 			className={cn("hover:opacity-75", className)}
 		>
 			<div
@@ -28,14 +37,14 @@ const TechCard = ({
 			>
 				Image
 			</div>
-			<div className="">
+			<div>
 				{/* TITLE */}
 				<h4
 					className={cn("font-bold text-accent-green text-base line-clamp-2", {
 						"text-lg line-clamp-none": variant === "secondary",
 					})}
 				>
-					Sample Post Title
+					{title}
 				</h4>
 				{/* AUTHOR */}
 				<div
@@ -43,18 +52,14 @@ const TechCard = ({
 						"flex my-3": variant === "secondary",
 					})}
 				>
-					<h5 className="font-semibold text-xs">John Doe</h5>
-					<h6 className="text-muted-foreground text-xs">December 1, 2023</h6>
+					<h5 className="font-semibold text-xs">{author}</h5>
+					<h6 className="text-muted-foreground text-xs">{formattedDate}</h6>
 					<p
 						className={cn("text-slate-600 line-clamp-3", {
 							"line-clamp-5": variant === "secondary",
 						})}
 					>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-						assumenda, officiis molestiae rem molestias laudantium quae dolor
-						eum distinctio accusamus enim, explicabo, esse atque dolorum quam
-						ratione consequatur eveniet temporibus. Accusantium repellat dolorum
-						veritatis fugit mollitia quisquam saepe corporis odit.
+						{snippet}
 					</p>
 				</div>
 			</div>

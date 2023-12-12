@@ -1,6 +1,11 @@
+import { PostWithCategory } from "@/types/PostWithCategory";
 import Card from "@/components/landing/Card";
 
-const Travel = () => {
+type TravelProps = {
+	posts: PostWithCategory[];
+};
+
+const Travel = ({ posts }: TravelProps) => {
 	return (
 		<section className="my-10">
 			{/* HEADER */}
@@ -14,25 +19,23 @@ const Travel = () => {
 			{/* CONTENT */}
 			<>
 				<div className="flex gap-8 my-4 lg:justify-between">
-					<Card
-						section="travel"
-						variant="secondary"
-						className="basis-1/3"
-					/>
-					<Card
-						section="travel"
-						variant="secondary"
-						className="basis-1/3"
-					/>
-					<Card
-						section="travel"
-						variant="secondary"
-						className="basis-1/3"
-					/>
+					{posts.map((post: PostWithCategory, index: number) => {
+						if (index < 3)
+							return (
+								<Card
+									key={post?.id}
+									section="travel"
+									variant="secondary"
+									post={post}
+									className="basis-1/3"
+								/>
+							);
+					})}
 				</div>
 
 				<Card
 					section="travel"
+					post={posts[3]}
 					className="flex items-center lg:justify-between gap-4"
 				/>
 			</>
