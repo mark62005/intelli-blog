@@ -26,6 +26,12 @@ const TrendingCard = ({ post, category, className }: TrendingCardProps) => {
 					alt={post?.title}
 					placeholder="blur"
 					fill
+					sizes="
+						(max-width: 480px) 100vw,
+						(max-width: 768px) 75vw,
+						(max-width: 1060px) 50vw,
+						33vw
+					"
 					className="object-cover"
 				/>
 			</div>
