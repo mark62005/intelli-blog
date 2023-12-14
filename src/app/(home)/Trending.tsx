@@ -30,8 +30,7 @@ const Trending = ({ posts }: TrendingProps) => {
 							key={post?.id}
 							post={post ?? {}}
 							category={post?.category}
-							className={cn(`lg:col-span-${col} lg:row-span-${row}`)}
-							// className={`lg:col-span-${col} lg:row-span-${row}`}
+							className={`${row} ${col}`}
 						/>
 					);
 				})}
