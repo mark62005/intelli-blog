@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { PostWithCategory } from "@/types/PostWithCategory";
 
@@ -15,7 +16,7 @@ const TechCard = ({
 	post,
 	className,
 }: TechCardProps) => {
-	const { id, title, snippet, image, author, createdAt } = post || {};
+	const { id, title, snippet, imageUrl, author, createdAt } = post || {};
 	const formattedDate = new Date(createdAt).toLocaleDateString("en-US", {
 		year: "numeric",
 		month: "long",
@@ -27,17 +28,25 @@ const TechCard = ({
 			href={`/posts/${id}`}
 			className={cn("hover:opacity-75", className)}
 		>
+			{/* IMAGE */}
 			<div
-				className={cn("relative w-full h-48 mb-3 bg-slate-600", {
+				className={cn("basis-full relative w-auto h-48 mb-3", {
 					"h-96": section === "tech" && variant === "secondary",
 					"h-80":
 						(section === "travel" && variant === "secondary") ||
 						section === "other",
 				})}
 			>
-				Image
+				<Image
+					src={imageUrl}
+					alt={title}
+					fill
+					placeholder="blur"
+					className="object-cover"
+				/>
 			</div>
-			<div>
+
+			<div className="basis-full">
 				{/* TITLE */}
 				<h4
 					className={cn("font-bold text-accent-green text-base line-clamp-2", {

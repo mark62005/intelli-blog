@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { Category, Post } from "@prisma/client";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Category } from "@prisma/client";
+import { PostWithCategory } from "@/types/PostWithCategory";
 
 type TrendingCardProps = {
-	post: Post;
+	post: PostWithCategory;
 	category: Category;
 	className?: string;
 };
@@ -18,7 +20,15 @@ const TrendingCard = ({ post, category, className }: TrendingCardProps) => {
 			)}
 		>
 			{/* BACKGROUND IMAGE */}
-			<div className="relative z-0 w-full h-full bg-gray-700">Image</div>
+			<div className="relative z-0 w-full h-full">
+				<Image
+					src={post?.imageUrl}
+					alt={post?.title}
+					placeholder="blur"
+					fill
+					className="object-cover"
+				/>
+			</div>
 
 			{/* CONTENT */}
 			<div className="absolute z-1 bottom-0 left-0 p-4">

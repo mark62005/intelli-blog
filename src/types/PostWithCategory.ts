@@ -3,7 +3,7 @@ export type PostWithCategory = {
 	title: string;
 	content: string;
 	snippet: string;
-	image: string;
+	imageUrl: string;
 	author: string;
 	categoryId: string;
 	category: {
