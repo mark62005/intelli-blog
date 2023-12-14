@@ -1,6 +1,7 @@
 import { PostWithCategory } from "@/types/PostWithCategory";
 import TrendingCard from "@/components/landing/TrendingCard";
 import { TRENDING_GRID_SPANS } from "@/config";
+import { cn } from "@/lib/utils";
 
 type TrendingProps = {
 	posts: PostWithCategory[];
@@ -29,7 +30,8 @@ const Trending = ({ posts }: TrendingProps) => {
 							key={post?.id}
 							post={post ?? {}}
 							category={post?.category}
-							className={`lg:col-span-${col} lg:row-span-${row}`}
+							className={cn(`lg:col-span-${col} lg:row-span-${row}`)}
+							// className={`lg:col-span-${col} lg:row-span-${row}`}
 						/>
 					);
 				})}

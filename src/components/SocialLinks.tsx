@@ -12,7 +12,10 @@ const SocialLinks = ({ className, variant = "header" }: SocialLinksProps) => {
 	return (
 		<div
 			className={cn(
-				"hidden lg:flex lg:justify-start lg:items-center lg:gap-4",
+				"hidden lg:flex lg:items-center lg:gap-4",
+				{
+					"lg:justify-start": variant === "footer",
+				},
 				className
 			)}
 		>
