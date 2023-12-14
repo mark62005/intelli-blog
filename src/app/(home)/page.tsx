@@ -10,34 +10,52 @@ import OtherSection from "./Other";
 import SubscribeCTA from "@/components/landing/SubscribeCTA";
 import Sidbar from "./Sidbar";
 
-const getPosts = async (): Promise<Array<PostWithCategory>> => {
-	return await db.post.findMany({
+const getPosts = async (): Promise<PostWithCategory[]> => {
+	const posts = await db.post.findMany({
 		include: {
 			category: true,
 		},
 	});
+
+	const formattedPosts = await Promise.all(
+		posts.map(async (post: PostWithCategory) => {
+			const imageModule = require(`../../../public${post.imageUrl}`);
+
+			return {
+				...post,
+				imageUrl: imageModule.default,
+			};
+		})
+	);
+
+	return formattedPosts;
 };
 
 export default async function Home() {
 	const posts = await getPosts();
 
-	const getPostsInCategories = (): Array<Array<PostWithCategory>> => {
-		const trendingPosts = new Array<PostWithCategory>();
-		const techPosts = new Array<PostWithCategory>();
-		const travelPosts = new Array<PostWithCategory>();
-		const otherPosts = new Array<PostWithCategory>();
+	const getPostsInCategories = (): PostWithCategory[][] => {
+		const trendingPosts: PostWithCategory[] = [];
+		const techPosts: PostWithCategory[] = [];
+		const travelPosts: PostWithCategory[] = [];
+		const otherPosts: PostWithCategory[] = [];
 
 		posts.forEach((post: PostWithCategory, index: number) => {
+			const isTechPostAndIsVacant =
+				post.category.name === "Tech" && techPosts.length < 4;
+			const isTravelPostAndIsVacant =
+				post.category.name === "Travel" && travelPosts.length < 4;
+			const isOtherPostAndIsVacant =
+				post.category.name !== ("Tech" || "Travel") && otherPosts.length < 4;
+
 			if (index < 4) {
-				post;
 				trendingPosts.push(post);
 			}
-
-			if (post.category.name === "Tech") {
+			if (isTechPostAndIsVacant) {
 				techPosts.push(post);
-			} else if (post.categoryId === "Travel") {
+			} else if (isTravelPostAndIsVacant) {
 				travelPosts.push(post);
-			} else if (post.categoryId !== ("Tech" || "Travel")) {
+			} else if (isOtherPostAndIsVacant) {
 				otherPosts.push(post);
 			}
 		});
