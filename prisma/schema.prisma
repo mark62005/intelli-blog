@@ -15,12 +15,12 @@ model Category {
 }
 
 model Post {
-  id      String @id @default(uuid())
-  title   String
-  content String @db.Text
-  snippet String @db.Text
-  image   String
-  author  String
+  id       String @id @default(uuid())
+  title    String
+  content  String @db.Text
+  snippet  String @db.Text
+  imageUrl String
+  author   String
 
   category   Category @relation(fields: [categoryId], references: [id])
   categoryId String
