@@ -1,5 +1,6 @@
 import SocialLinks from "@/components/SocialLinks";
 import SubscribeCTA from "@/components/landing/SubscribeCTA";
+import { cn } from "@/lib/utils";
 
 type SidebarProps = {
 	className?: string;
@@ -7,7 +8,7 @@ type SidebarProps = {
 
 const Sidbar = ({ className }: SidebarProps) => {
 	return (
-		<section className="basis-1/4 flex flex-col gap-6">
+		<section className={cn("flex flex-col gap-6", className)}>
 			{/* SUBSCRIBE */}
 			<>
 				<h4 className="bg-slate-700 text-slate-200 font-bold text-base text-center py-3 px-6">
