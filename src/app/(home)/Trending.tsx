@@ -1,6 +1,12 @@
+import { PostWithCategory } from "@/types/PostWithCategory";
 import TrendingCard from "@/components/landing/TrendingCard";
+import { TRENDING_GRID_SPANS } from "@/config";
 
-const Trending = () => {
+type TrendingProps = {
+	posts: PostWithCategory[];
+};
+
+const Trending = ({ posts }: TrendingProps) => {
 	return (
 		<section className="py-10">
 			<div className="flex items-center gap-4">
@@ -15,10 +21,18 @@ const Trending = () => {
 			</div>
 
 			<div className="grid grid-cols-1 gap-5 my-4 lg:grid-cols-4 lg:grid-rows-2 lg:h-[600px]">
-				<TrendingCard className="bg-slate-600 lg:col-span-2 lg:row-span-2"></TrendingCard>
-				<TrendingCard className="bg-slate-600 lg:col-span-2 lg:row-span-1"></TrendingCard>
-				<TrendingCard className="bg-slate-600 lg:col-span-1 lg:row-span-1"></TrendingCard>
-				<TrendingCard className="bg-slate-600 lg:col-span-1 lg:row-span-1"></TrendingCard>
+				{TRENDING_GRID_SPANS.map(({ row, col }, index) => {
+					const post = posts[index];
+
+					return (
+						<TrendingCard
+							key={post?.id}
+							post={post ?? {}}
+							category={post?.category}
+							className={`lg:col-span-${col} lg:row-span-${row}`}
+						/>
+					);
+				})}
 			</div>
 
 			<p className="text-base">
