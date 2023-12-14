@@ -16,18 +16,13 @@ const Other = ({ posts }: OtherProps) => {
 
 			{/* CONTENT */}
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-				{posts.map((post: PostWithCategory, index: number) => {
-					if (index < 4) {
-						return (
-							<Card
-								key={post?.id}
-								section="other"
-								post={post}
-								className=""
-							/>
-						);
-					}
-				})}
+				{posts.map((post: PostWithCategory, index: number) => (
+					<Card
+						key={post?.id}
+						section="other"
+						post={post}
+					/>
+				))}
 			</div>
 		</section>
 	);

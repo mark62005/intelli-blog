@@ -1,5 +1,6 @@
 import { PostWithCategory } from "@/types/PostWithCategory";
 import TrendingCard from "@/components/landing/TrendingCard";
+import { TRENDING_GRID_SPANS } from "@/config";
 
 type TrendingProps = {
 	posts: PostWithCategory[];
@@ -20,37 +21,17 @@ const Trending = ({ posts }: TrendingProps) => {
 			</div>
 
 			<div className="grid grid-cols-1 gap-5 my-4 lg:grid-cols-4 lg:grid-rows-2 lg:h-[600px]">
-				{posts.map(async (post: PostWithCategory, index: number) => {
-					switch (index) {
-						case 0:
-							return (
-								<TrendingCard
-									key={post?.id}
-									post={post ?? {}}
-									category={post?.category}
-									className="bg-slate-600 lg:col-span-2 lg:row-span-2"
-								/>
-							);
-						case 1:
-							return (
-								<TrendingCard
-									key={post?.id}
-									post={post ?? {}}
-									category={post?.category}
-									className="bg-slate-600 lg:col-span-2 lg:row-span-1"
-								/>
-							);
+				{TRENDING_GRID_SPANS.map(({ row, col }, index) => {
+					const post = posts[index];
 
-						default:
-							return (
-								<TrendingCard
-									key={post?.id}
-									post={post ?? {}}
-									category={post?.category}
-									className="bg-slate-600 lg:col-span-1 lg:row-span-1"
-								/>
-							);
-					}
+					return (
+						<TrendingCard
+							key={post?.id}
+							post={post ?? {}}
+							category={post?.category}
+							className={`lg:col-span-${col} lg:row-span-${row}`}
+						/>
+					);
 				})}
 			</div>
 

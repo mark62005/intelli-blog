@@ -26,16 +26,18 @@ const Travel = ({ posts }: TravelProps) => {
 									key={post?.id}
 									section="travel"
 									variant="secondary"
-									post={post}
+									post={post ?? {}}
 									className="basis-1/3"
 								/>
 							);
+
+						return;
 					})}
 				</div>
 
 				<Card
 					section="travel"
-					post={posts[3]}
+					post={posts[3] ?? {}}
 					className="flex items-center lg:justify-between gap-4"
 				/>
 			</>

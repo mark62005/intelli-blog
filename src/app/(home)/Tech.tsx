@@ -20,24 +20,22 @@ const Tech = ({ posts }: TechProps) => {
 					if (index === 0)
 						return (
 							<Card
-								key={post.id}
+								key={post?.id}
 								section="tech"
 								variant="secondary"
-								post={post}
+								post={post ?? {}}
 								className="lg:col-span-1 lg:row-span-3"
 							/>
 						);
 
-					if (index < 4) {
-						return (
-							<Card
-								key={post.id}
-								section="tech"
-								post={post}
-								className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
-							/>
-						);
-					}
+					return (
+						<Card
+							key={post?.id}
+							section="tech"
+							post={post ?? {}}
+							className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
+						/>
+					);
 				})}
 			</div>
 		</section>
