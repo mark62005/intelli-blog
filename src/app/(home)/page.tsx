@@ -8,7 +8,7 @@ import TechSection from "./Tech";
 import TravelSection from "./Travel";
 import OtherSection from "./Other";
 import SubscribeCTA from "@/components/landing/SubscribeCTA";
-import Sidbar from "./Sidbar";
+import Sidebar from "./Sidebar";
 
 const getPosts = async (): Promise<PostWithCategory[]> => {
 	const posts = await db.post.findMany({
@@ -84,7 +84,7 @@ export default async function Home() {
 						<SubscribeCTA className="mt-16 hidden lg:flex" />
 					</div>
 
-					<Sidbar className="basis-1/4" />
+					<Sidebar className="basis-1/4" />
 				</div>
 			</MaxWidthContainer>
 		</main>

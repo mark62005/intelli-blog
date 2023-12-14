@@ -75,20 +75,20 @@ export const SOCIAL_LINKS = [
 /* MAIN */
 export const TRENDING_GRID_SPANS = [
 	{
-		row: 2,
-		col: 2,
+		row: "lg:row-span-2",
+		col: "lg:col-span-2",
 	},
 	{
-		row: 1,
-		col: 2,
+		row: "lg:row-span-1",
+		col: "lg:col-span-2",
 	},
 	{
-		row: 1,
-		col: 1,
+		row: "lg:row-span-1",
+		col: "lg:col-span-",
 	},
 	{
-		row: 1,
-		col: 1,
+		row: "lg:row-span-1",
+		col: "lg:col-span-1",
 	},
 ];
 
