@@ -1,3 +1,4 @@
+/* HEADER */
 export const NAV_LINKS = [
 	{
 		label: "Home",
@@ -71,6 +72,27 @@ export const SOCIAL_LINKS = [
 	},
 ];
 
+/* MAIN */
+export const TRENDING_GRID_SPANS = [
+	{
+		row: 2,
+		col: 2,
+	},
+	{
+		row: 1,
+		col: 2,
+	},
+	{
+		row: 1,
+		col: 1,
+	},
+	{
+		row: 1,
+		col: 1,
+	},
+];
+
+/* FOOTER */
 export const FOOTER_NAV_LINKS = [
 	[
 		{

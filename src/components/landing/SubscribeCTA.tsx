@@ -5,10 +5,11 @@ import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 
 type SubscribeCTAProps = {
+	variant?: "sidebar" | "main";
 	className?: string;
 };
 
-const SubscribeCTA = ({ className }: SubscribeCTAProps) => {
+const SubscribeCTA = ({ variant = "main", className }: SubscribeCTAProps) => {
 	return (
 		<div
 			className={cn(
@@ -16,14 +17,22 @@ const SubscribeCTA = ({ className }: SubscribeCTAProps) => {
 				className
 			)}
 		>
-			<h4 className="font-semibold text-base">Subscribe to our Newsletter</h4>
+			<h4
+				className={cn("font-semibold text-xl", {
+					"lg:text-base": variant === "sidebar",
+				})}
+			>
+				Subscribe to our Newsletter
+			</h4>
 			<Label className="text-base text-slate-600 w-5/6">
 				Enter your email for your curated dose of AI brilliance.
 			</Label>
 
 			<Input
 				placeholder="Enter your Email"
-				className="w-5/6 py-6 px-2 border-2"
+				className={cn("w-5/6 py-6 px-2 border-2", {
+					"text-center lg:py-4": variant === "sidebar",
+				})}
 			/>
 
 			<Button

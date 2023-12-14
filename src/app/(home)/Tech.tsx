@@ -1,6 +1,11 @@
+import { PostWithCategory } from "@/types/PostWithCategory";
 import Card from "@/components/landing/Card";
 
-const Tech = () => {
+type TechProps = {
+	posts: PostWithCategory[];
+};
+
+const Tech = ({ posts }: TechProps) => {
 	return (
 		<section className="">
 			{/*  HEADER */}
@@ -11,23 +16,27 @@ const Tech = () => {
 
 			{/* CONTENT */}
 			<div className="grid grid-cols-1 gap-8 my-4 lg:grid-cols-2 lg:grid-rows-3">
-				<Card
-					section="tech"
-					variant="secondary"
-					className="lg:col-span-1 lg:row-span-3"
-				/>
-				<Card
-					section="tech"
-					className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
-				/>
-				<Card
-					section="tech"
-					className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
-				/>
-				<Card
-					section="tech"
-					className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
-				/>
+				{posts.map((post, index) => {
+					if (index === 0)
+						return (
+							<Card
+								key={post?.id}
+								section="tech"
+								variant="secondary"
+								post={post ?? {}}
+								className="lg:col-span-1 lg:row-span-3"
+							/>
+						);
+
+					return (
+						<Card
+							key={post?.id}
+							section="tech"
+							post={post ?? {}}
+							className="flex justify-between gap-3 lg:col-span-1 lg:row-span-1"
+						/>
+					);
+				})}
 			</div>
 		</section>
 	);

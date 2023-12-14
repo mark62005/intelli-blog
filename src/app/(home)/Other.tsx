@@ -1,6 +1,11 @@
+import { PostWithCategory } from "@/types/PostWithCategory";
 import Card from "@/components/landing/Card";
 
-const Other = () => {
+type OtherProps = {
+	posts: PostWithCategory[];
+};
+
+const Other = ({ posts }: OtherProps) => {
 	return (
 		<section className="my-10">
 			{/* HEADER */}
@@ -11,22 +16,13 @@ const Other = () => {
 
 			{/* CONTENT */}
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-				<Card
-					section="other"
-					className=""
-				/>
-				<Card
-					section="other"
-					className=""
-				/>
-				<Card
-					section="other"
-					className=""
-				/>
-				<Card
-					section="other"
-					className=""
-				/>
+				{posts.map((post: PostWithCategory, index: number) => (
+					<Card
+						key={post?.id}
+						section="other"
+						post={post}
+					/>
+				))}
 			</div>
 		</section>
 	);
