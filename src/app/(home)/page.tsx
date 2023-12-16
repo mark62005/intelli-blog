@@ -8,7 +8,7 @@ import TechSection from "./Tech";
 import TravelSection from "./Travel";
 import OtherSection from "./Other";
 import SubscribeCTA from "@/components/landing/SubscribeCTA";
-import Sidebar from "./Sidebar";
+import Sidebar from "../../components/Sidebar";
 
 const getPosts = async (): Promise<PostWithCategory[]> => {
 	const posts = await db.post.findMany({

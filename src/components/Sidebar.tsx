@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import AdvertImage from "../../../public/ad-2.png";
-import AuthorImage from "../../../public/about-profile.jpg";
+import AdvertImage from "../../public/ad-2.png";
+import AuthorImage from "../../public/about-profile.jpg";
 import SocialLinks from "@/components/SocialLinks";
 import SubscribeCTA from "@/components/landing/SubscribeCTA";
 
