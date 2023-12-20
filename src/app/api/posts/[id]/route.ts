@@ -1,12 +1,13 @@
 import { db } from "@/lib/prisma";
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
-type Params = {
-	id: string;
+type TParams = {
+	params: {
+		id: string;
+	};
 };
 
-export async function PATCH(req: Request, params: Params) {
+export async function PATCH(req: Request, { params }: TParams) {
 	try {
 		const { id } = params;
 		const { title, content } = await req.json();
