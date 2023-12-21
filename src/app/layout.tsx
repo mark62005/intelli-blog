@@ -9,7 +9,7 @@ import Footer from "@/components/footer/Footer";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "IntelliBlog",
+	title: "Intelli Blog",
 	description: "Where Intelligence Meets Imagination",
 };
 

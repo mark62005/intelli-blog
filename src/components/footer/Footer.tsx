@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FOOTER_NAV_LINKS } from "@/config";
 import MaxWidthContainer from "../MaxWidthContainer";
 import SocialLinks from "../SocialLinks";
+import Logo from "../../../public/logos/logo.png";
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
@@ -12,9 +14,19 @@ const Footer = () => {
 				<div className="grid grid-cols-1 pt-16 pb-12 lg:grid lg:grid-cols-12 mx-auto gap-16">
 					{/* FIRST COLUMN */}
 					<div className="lg:col-span-5 lg:mt-0">
-						<h4 className="font-bold mb-8 hover:opacity-75">
-							<Link href="/">IntelliBlog</Link>
-						</h4>
+						<Link
+							href="/"
+							className="inline-block"
+						>
+							<Image
+								src={Logo}
+								alt="Logo of Intelli Blog"
+								width={130}
+								height={60}
+								className="bg-white rounded-lg p-1.5 mb-8 hover:opacity-75"
+							/>
+						</Link>
+
 						<SocialLinks
 							variant="footer"
 							className="mb-2"
