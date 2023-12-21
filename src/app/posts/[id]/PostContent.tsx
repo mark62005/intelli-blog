@@ -2,12 +2,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import Image from "next/image";
 import { FormattedPostWithCategory } from "@/types/FormattedPostWithCategory";
-import { useEditor, EditorContent, EditorEvents } from "@tiptap/react";
+import { useEditor, EditorEvents } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { cn, formatDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import EditorMenuBar from "./EditorMenuBar";
 import SocialLinks from "@/components/SocialLinks";
 import PostHeader from "./PostHeader";
 import Article from "./Article";
@@ -81,7 +80,6 @@ const PostContent = ({ post }: PostContentProps) => {
 				}),
 			}
 		);
-
 		const data = await response.json();
 
 		handleIsEditable(false);
