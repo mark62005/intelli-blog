@@ -92,7 +92,7 @@ const PostContent = ({ post }: PostContentProps) => {
 	};
 
 	return (
-		<article className="prose mb-10">
+		<article className="prose mb-10 w-full max-w-full">
 			{/* BREADCRUMBS */}
 			<h5 className="line-clamp-1">{`Home > ${post.category.name} > ${post.title}`}</h5>
 
