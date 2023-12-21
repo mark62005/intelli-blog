@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 import { PostWithCategory } from "@/types/PostWithCategory";
 
 type TechCardProps = {
@@ -17,11 +17,7 @@ const TechCard = ({
 	className,
 }: TechCardProps) => {
 	const { id, title, snippet, imageUrl, author, createdAt } = post || {};
-	const formattedDate = new Date(createdAt).toLocaleDateString("en-US", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+	const formattedDate = formatDate(createdAt);
 
 	return (
 		<Link
