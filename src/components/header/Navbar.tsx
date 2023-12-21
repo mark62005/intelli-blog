@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { buttonVariants } from "../ui/button";
+import Image from "next/image";
 import { NAV_LINKS } from "@/config";
+import { buttonVariants } from "../ui/button";
 import MaxWidthContainer from "../MaxWidthContainer";
 import MobileNavMenu from "./MobileNavMenu";
 import SocialLinks from "../SocialLinks";
+import Logo from "../../../public/logos/logo.png";
 
 const Navbar = () => {
 	return (
@@ -14,9 +16,14 @@ const Navbar = () => {
 					{/* LEFT SIDE */}
 					<Link
 						href="/"
-						className="text-xl font-bold hover:opacity-50"
+						className="hover:opacity-50"
 					>
-						LOGO
+						<Image
+							src={Logo}
+							alt="Logo of Intelli Blog"
+							width={95}
+							height={44}
+						/>
 					</Link>
 
 					{/* RIGHT SIDE */}
