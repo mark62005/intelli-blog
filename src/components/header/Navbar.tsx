@@ -1,11 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { NAV_LINKS } from "@/config";
 import { buttonVariants } from "../ui/button";
 import MaxWidthContainer from "../MaxWidthContainer";
 import MobileNavMenu from "./MobileNavMenu";
 import SocialLinks from "../SocialLinks";
-import Logo from "../../../public/logos/logo.png";
+import Logo from "../Logo";
 
 const Navbar = () => {
 	return (
@@ -14,17 +13,7 @@ const Navbar = () => {
 				<SocialLinks className="border-b border-gray-300" />
 				<div className="flex justify-between items-center w-full py-2 border-b border-gray-300">
 					{/* LEFT SIDE */}
-					<Link
-						href="/"
-						className="hover:opacity-50"
-					>
-						<Image
-							src={Logo}
-							alt="Logo of Intelli Blog"
-							width={95}
-							height={44}
-						/>
-					</Link>
+					<Logo />
 
 					{/* RIGHT SIDE */}
 					<nav className="hidden lg:flex lg:justify-between lg:items-center lg:gap-6">
